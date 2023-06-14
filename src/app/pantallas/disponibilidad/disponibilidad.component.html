@@ -1,1 +1,16 @@
-<p>disponibilidad works!</p>
+<div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <tbody>
+        <tr *ngFor="let notificacion of notificaciones">
+            <th scope="row">{{notificacion.idClase}}</th>
+            <td>{{notificacion.Dia}}</td>
+            <td>{{notificacion.Asignatura}}</td>
+            <td>{{notificacion.Grupo}}</td>
+            <td>{{notificacion.Hora}}</td>
+        </tr>
+      </tbody>
+    </div>
+    <div class="col-md-auto">
+      informacion docente
+    </div>
+</div>

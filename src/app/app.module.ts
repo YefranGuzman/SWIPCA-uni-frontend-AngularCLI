@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, rutadecomponente } from './app-routing.module';

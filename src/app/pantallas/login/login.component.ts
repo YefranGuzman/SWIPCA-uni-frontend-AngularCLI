@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { ApiServiceService } from '../../servicios/api-service.service'
 import { loginI } from 'src/app/models/login.interface';
+import { responseI } from 'src/app/models/response.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,20 +12,29 @@ import { loginI } from 'src/app/models/login.interface';
 })
 export class LoginComponent implements OnInit {
   loginform: FormGroup = new FormGroup({
-    usuario: new FormControl('', Validators.required),
-    password: new FormControl ('', Validators.required)
+    nick: new FormControl('', Validators.required),
+    contrasena: new FormControl ('', Validators.required)
   })
 
-  constructor(private api:ApiServiceService){}
+  constructor(private api:ApiServiceService, private router:Router){}
   
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['/dashboard'])
+    }
+  }
+
   ngOnInit(): void {
+    this.checkLocalStorage();
   }
 
   onLogin(form: AbstractControl<loginI>) {
     const formValue: loginI = form.value;
     this.api.InicioSesion(formValue).subscribe(data => {
-      console.log(data);
+      let dataresponse:responseI = data
+      localStorage.setItem("token", dataresponse.token);
+      localStorage.setItem("idUsuario",dataresponse.idUsuario.toString());
+      this.router.navigate(['/dashboard'])
     });
   }
-  
 }

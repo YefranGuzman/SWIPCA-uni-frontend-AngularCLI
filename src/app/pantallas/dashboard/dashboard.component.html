@@ -1,1 +1,30 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+<div class="dashboard-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3>Mi Menú</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="carga-academica">
+          <a>Carga Académica</a>
+          <ul class="sub-menu">
+            <li><a routerLink="/disponibilidad">Principal</a></li>
+            <li><a routerLink="/cargahoraria">Carga Horaria</a></li>
+            <li><a routerLink="/disponibilidad">Disponibilidad de Clases</a></li>
+            <li><a routerLink="/horario">Horario de Clases</a></li>
+          </ul>
+        </li>
+        <li class="opciones">
+          <a>Opciones</a>
+          <ul class="sub-menu">
+            <li><a routerLink="/login">Usuario</a></li>
+            <li><a routerLink="/Ayuda">Ayuda</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+<app-footer></app-footer>

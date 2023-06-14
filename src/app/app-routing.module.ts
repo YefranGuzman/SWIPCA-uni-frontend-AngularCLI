@@ -7,16 +7,19 @@ import { DisponibilidadComponent } from './pantallas/disponibilidad/disponibilid
 import { HorarioComponent } from './pantallas/horario/horario.component';
 import { PerfilComponent } from './pantallas/perfil/perfil.component';
 import { PrincipalComponent } from './pantallas/principal/principal.component';
+import { AyudaComponent } from './pantallas/ayuda/ayuda.component';
+import { CreaciondisponibilidadComponent } from './pantallas/creaciondisponibilidad/creaciondisponibilidad.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'login', pathMatch:'full'},
-  {path: 'login', component: LoginComponent},
   {path: 'cargahoraria', component: CargahorariaComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'disponibilidad', component: DisponibilidadComponent},
   {path: 'horario', component: HorarioComponent},
   {path: 'perfil', component: PerfilComponent},
-  {path: 'principal', component: PrincipalComponent}
+  {path: 'principal', component: PrincipalComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'ayuda', component: AyudaComponent}
 ];
 
 @NgModule({
@@ -24,5 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const rutadecomponente = [LoginComponent,CargahorariaComponent,DashboardComponent,DisponibilidadComponent,
-                                HorarioComponent,PerfilComponent,PrincipalComponent]
+export const rutadecomponente = [LoginComponent,CargahorariaComponent,DashboardComponent,DisponibilidadComponent,HorarioComponent,PerfilComponent,PrincipalComponent,AyudaComponent,CreaciondisponibilidadComponent]
