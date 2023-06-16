@@ -8,11 +8,11 @@ const routes: Routes = [
       import('./layout/components/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: '',
+    path: 'dashboard',
     component: LayoutComponent,
     children: [
       {
-        path: 'dashboard',
+        path: '',
         loadChildren: () =>
           import('./layout/components/dashboard/dashboard.module').then(
             (m) => m.DashboardModule

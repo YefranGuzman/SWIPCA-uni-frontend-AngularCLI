@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { listaDisponibilidadPorUsuarioI } from 'src/app/models/listDispUser.interface';
-import { ApiServiceService } from 'src/app/servicios/api-service.service'
+import { listaDisponibilidadPorUsuarioI } from '../../../../models/listDispUser.interface';
+import { ApiServiceService } from '../../../../servicios/api-service.service';
 
 @Component({
   selector: 'app-disponibilidad',

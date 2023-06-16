@@ -5,9 +5,9 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
-import { ApiServiceService } from 'src/app/servicios/api-service.service';
-import { loginI } from 'src/app/models/login.interface';
-import { responseI } from 'src/app/models/response.interface';
+import { ApiServiceService } from '../../../../servicios/api-service.service';
+import { loginI } from '../../../../models/login.interface';
+import { responseI } from '../../../../models/response.interface';
 import { Router } from '@angular/router';
 
 @Component({

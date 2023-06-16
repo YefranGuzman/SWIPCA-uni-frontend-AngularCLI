@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from 'src/app/servicios/api-service.service'
+import { ApiServiceService } from '../../../../servicios/api-service.service';
 import { Router } from '@angular/router';
 
 @Component({
