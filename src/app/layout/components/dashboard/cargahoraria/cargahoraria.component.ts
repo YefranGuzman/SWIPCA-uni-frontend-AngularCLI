@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { listaDisponibilidadPorUsuarioI } from 'src/app/models/listDispUser.interface';
-import { ApiServiceService } from '../../servicios/api-service.service'
+import { ApiServiceService } from 'src/app/servicios/api-service.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,9 +9,9 @@ import { Router } from '@angular/router';
 })
 
 export class CargahorariaComponent implements OnInit {
-  
+
   constructor(private api:ApiServiceService, private router:Router){}
   ngOnInit(): void {
-    
+
   }
 }

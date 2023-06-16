@@ -1,31 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../app/pantallas/login/login.component'
-import { DashboardComponent } from './pantallas/dashboard/dashboard.component';
-import { CargahorariaComponent } from './pantallas/cargahoraria/cargahoraria.component';
-import { DisponibilidadComponent } from './pantallas/disponibilidad/disponibilidad.component';
-import { HorarioComponent } from './pantallas/horario/horario.component';
-import { PerfilComponent } from './pantallas/perfil/perfil.component';
-import { PrincipalComponent } from './pantallas/principal/principal.component';
-import { AyudaComponent } from './pantallas/ayuda/ayuda.component';
-import { CreaciondisponibilidadComponent } from './pantallas/creaciondisponibilidad/creaciondisponibilidad.component';
-
+import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
-  {path: '', redirectTo:'login', pathMatch:'full'},
-  {path: 'cargahoraria', component: CargahorariaComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'disponibilidad', component: DisponibilidadComponent},
-  {path: 'horario', component: HorarioComponent},
-  {path: 'perfil', component: PerfilComponent},
-  {path: 'principal', component: PrincipalComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'ayuda', component: AyudaComponent},
-  {path: 'Creacion', component: CreaciondisponibilidadComponent}
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./layout/components/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./layout/components/dashboard/dashboard.module').then(
+            (m) => m.DashboardModule
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-}) 
-export class AppRoutingModule { }
-export const rutadecomponente = [LoginComponent,CargahorariaComponent,DashboardComponent,DisponibilidadComponent,HorarioComponent,PerfilComponent,PrincipalComponent,AyudaComponent,CreaciondisponibilidadComponent]
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
