@@ -19,12 +19,13 @@ const routes: Routes = [
   {path: 'perfil', component: PerfilComponent},
   {path: 'principal', component: PrincipalComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'ayuda', component: AyudaComponent}
+  {path: 'ayuda', component: AyudaComponent},
+  {path: 'Creacion', component: CreaciondisponibilidadComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-})
+}) 
 export class AppRoutingModule { }
 export const rutadecomponente = [LoginComponent,CargahorariaComponent,DashboardComponent,DisponibilidadComponent,HorarioComponent,PerfilComponent,PrincipalComponent,AyudaComponent,CreaciondisponibilidadComponent]
