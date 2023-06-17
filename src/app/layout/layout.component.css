@@ -1,6 +1,12 @@
 .dashboard-container {
   display: flex;
-  min-height: 100vh;
+  background: #ddd;
+}
+
+h3{
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sidebar {
@@ -10,7 +16,7 @@
 
 .sidebar-header {
   padding: 20px;
-  background-color: #ddd;
+  background-color: #fff;
 }
 
 .sidebar-header h3 {
@@ -25,6 +31,7 @@
 
 .sidebar-menu li {
   padding: 10px;
+  list-style-type: none;
 }
 
 .sidebar-menu li a {
@@ -32,7 +39,18 @@
   color: #333;
 }
 
-.content {
+.sidebar-content {
+  width: 80%;
   flex-grow: 1;
   padding: 20px;
+}
+
+.sidebar-menu-header{
+  background: rgb(0,55,130);
+  background: linear-gradient(90deg, rgba(0,55,130,1) 0%, rgba(0,55,130,1) 75%, rgba(165,204,255,1) 80%, rgba(217,234,255,1) 90%, rgba(255,255,255,1) 100%);
+  color:rgb(255, 255, 255);
+}
+
+.carga-academica{
+  background: #f2f2f2;
 }

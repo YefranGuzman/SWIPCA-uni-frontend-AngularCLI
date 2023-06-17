@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { listaDisponibilidadPorUsuarioI } from '../../../../models/listDispUser.interface';
 import { ApiServiceService } from '../../../../servicios/api-service.service';
 
@@ -9,8 +9,11 @@ import { ApiServiceService } from '../../../../servicios/api-service.service';
   styleUrls: ['./disponibilidad.component.css']
 })
 export class DisponibilidadComponent implements OnInit {
+  nombrecompleto = 'Nombre del usuario';
+  titulo = 'Titulo del usuario';
+  departamento = 'departamento del usuario';
 
-  constructor (private api:ApiServiceService, private router:Router){
+  constructor (private api:ApiServiceService){
     this.notificaciones = [];
   }
 
@@ -20,7 +23,7 @@ export class DisponibilidadComponent implements OnInit {
     const Usuario = localStorage.getItem('idUsuario');
 
     if (Usuario) {
-      const idUsuario = parseInt(Usuario, 10);
+      const idUsuario = parseInt(Usuario);
 
       this.api.ListaClasesDocente(idUsuario).subscribe(data =>
         this.notificaciones = data);

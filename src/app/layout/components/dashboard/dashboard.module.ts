@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [CommonModule, DashboardRoutes],
-  declarations: [],
+  declarations: [
+  ],
   exports: [RouterModule],
 })
 export class DashboardModule {}

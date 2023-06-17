@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
 
 import { LoginComponent } from './login.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +14,7 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginComponent, HeaderComponent, FooterComponent],
-      imports: [HttpClientModule, ReactiveFormsModule, FormsModule],
+      imports: [CommonModule,HttpClientModule, ReactiveFormsModule, FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);

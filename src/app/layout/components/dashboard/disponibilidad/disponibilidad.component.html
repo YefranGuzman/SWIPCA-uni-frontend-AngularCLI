@@ -1,16 +1,47 @@
 <div class="row justify-content-md-center">
-    <div class="col col-lg-6">
-      <tbody>
-        <tr *ngFor="let notificacion of notificaciones">
-            <th scope="row">{{notificacion.idClase}}</th>
-            <td>{{notificacion.Dia}}</td>
-            <td>{{notificacion.Asignatura}}</td>
-            <td>{{notificacion.Grupo}}</td>
-            <td>{{notificacion.Hora}}</td>
-        </tr>
-      </tbody>
+    <div class="col col-lg-7">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link">Notificacion</a>
+          <div>
+            <table>
+              <tbody>
+                <!--Lista de elementos-->
+                <tr *ngIf="notificaciones.length === 0"> No hay actividades</tr>
+                <tr *ngFor="let notificacion of notificaciones">
+                    <th scope="row">{{notificacion.idClase}}</th>
+                    <td>{{notificacion.Dia}}</td>
+                    <td>{{notificacion.Asignatura}}</td>
+                    <td>{{notificacion.Grupo}}</td>
+                    <td>{{notificacion.Hora}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Agenda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Departamento</a>
+        </li>
+      </ul>
     </div>
-    <div class="col-md-auto">
-      informacion docente
+    <div class="col col-lg-4 text-center">
+      <div class="col">
+        <img src="../../../../../assets/user.png">
+        <br>
+        <a>Informacion del usuario</a>
+        <br>
+        <a>{{nombrecompleto}}</a>
+        <br>
+        <a>{{titulo}}</a>
+        <br>
+        <a>{{departamento}}</a>
+      </div>
+      <div class="col">
+        <!--Lista de titulos-->
+        Titulos/Presigios
+      </div>
     </div>
 </div>

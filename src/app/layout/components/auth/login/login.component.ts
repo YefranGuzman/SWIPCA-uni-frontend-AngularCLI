@@ -35,14 +35,11 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: AbstractControl<loginI>) {
     const formValue: loginI = form.value;
-    // this.api.InicioSesion(formValue).subscribe(data => {
-    let dataresponse: responseI = {
-      token: 'sadaddddassssssssssssssssssss',
-      idUsuario: new Int16Array([21, 31]),
-    };
+    this.api.InicioSesion(formValue).subscribe(data => {
+    let dataresponse: responseI = data;
     localStorage.setItem('token', dataresponse.token);
     localStorage.setItem('idUsuario', dataresponse.idUsuario.toString());
     this.router.navigate(['/dashboard']);
-    // });
+    });
   }
 }
