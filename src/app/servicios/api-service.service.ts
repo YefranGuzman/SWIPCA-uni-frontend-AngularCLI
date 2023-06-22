@@ -4,6 +4,8 @@ import {loginI} from '../models/login.interface'
 import {responseI} from '../models/response.interface'
 import { Observable } from 'rxjs';
 import { listaDisponibilidadPorUsuarioI } from '../models/listDispUser.interface';
+import { disponibilidadAgendaI } from '../models/agendaUser.interface';
+import { departamentoI } from '../models/departamentoUser.interface';
 
 
 @Injectable({
@@ -20,7 +22,18 @@ export class ApiServiceService {
   }
   
   ListaClasesDocente(idUsuario:number):Observable<listaDisponibilidadPorUsuarioI[]>{
-    let direccion = this.url + "/api/Clase/agenda?idUsuario=" + idUsuario;
+    let direccion = this.url+"Clase/agenda?idUsuario="+idUsuario;
     return this.http.get<listaDisponibilidadPorUsuarioI[]>(direccion);
   }
+
+  listarAgendaDocente(idUsuario:number):Observable<disponibilidadAgendaI[]>{
+    let direccion = this.url+"agendadocente?idUsuario="+idUsuario;
+    return this.http.get<disponibilidadAgendaI[]>(direccion);
+  }
+
+  listardepartamento(idUsuario:number):Observable<departamentoI[]>{
+    let direccion = this.url+"agendadocente?idUsuario="+idUsuario;
+    return this.http.get<departamentoI[]>(direccion);
+  }
+  
 }

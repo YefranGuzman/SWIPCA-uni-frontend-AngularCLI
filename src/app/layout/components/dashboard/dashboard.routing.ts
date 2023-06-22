@@ -8,17 +8,21 @@ import { LoginComponent } from '../auth/login/login.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { CreaciondisponibilidadComponent } from './creaciondisponibilidad/creaciondisponibilidad.component';
 import { DisponibilidadtiempoComponent } from './disponibilidadtiempo/disponibilidadtiempo.component';
+import { CargahorariaDPTOComponent } from './cargahoraria-dpto/cargahoraria-dpto.component';
+import { ComprobardisponibilidadComponent } from './comprobardisponibilidad/comprobardisponibilidad.component';
 
 const routes: Routes = [
-  { path: 'cargahoraria', component: CargahorariaComponent },
   { path: 'disponibilidad', component: DisponibilidadComponent },
+  { path: 'cargahoraria', component: CargahorariaComponent },
+  { path: 'disponibilidadtiempo', component: DisponibilidadtiempoComponent},
   { path: 'horario', component: HorarioComponent },
-  { path: 'Disponibilidadtiempo', component: DisponibilidadtiempoComponent},
   { path: 'perfil', component: PerfilComponent },
   { path: 'principal', component: PrincipalComponent },
+  { path: 'cargahoraria-dpto', component: CargahorariaDPTOComponent},
+  { path: 'comprobardisponibilidad', component:ComprobardisponibilidadComponent},
   { path: 'login', component: LoginComponent },
   { path: 'ayuda', component: AyudaComponent },
-  { path: 'Creacion', component: CreaciondisponibilidadComponent }
+  { path: 'Creacion', component: CreaciondisponibilidadComponent}
 ];
 
 export const DashboardRoutes = RouterModule.forChild(routes);
