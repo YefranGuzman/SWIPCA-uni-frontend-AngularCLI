@@ -1,6 +1,7 @@
 <div class="row justify-content-md-center">
     <div class="col col-lg-7">
       <ul class="nav">
+        <!---->
         <li class="nav-item">
           <a class="nav-link">Notificacion</a>
           <div>
@@ -21,6 +22,21 @@
         </li>
         <li class="nav-item">
           <a class="nav-link">Agenda</a>
+          <div>
+            <table>
+              <thead>
+                <th>Tiempo</th>
+                <th>Actividad</th>
+              </thead>
+              <tbody>
+                <tr *ngIf="agenda.length === 0"> No hay actividades</tr>
+                <tr *ngFor="let agenda of agendas">
+                    <td>{{agenda.tiempo}}</td>
+                    <td>{{agenda.Asignatura}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link">Departamento</a>
@@ -33,11 +49,11 @@
         <br>
         <a>Informacion del usuario</a>
         <br>
-        <a>{{nombrecompleto}}</a>
+        <a>{{nombrecompletoUser}}</a>
         <br>
-        <a>{{titulo}}</a>
+        <a>{{tituloUser}}</a>
         <br>
-        <a>{{departamento}}</a>
+        <a>{{departamentoUser}}</a>
       </div>
       <div class="col">
         <!--Lista de titulos-->
