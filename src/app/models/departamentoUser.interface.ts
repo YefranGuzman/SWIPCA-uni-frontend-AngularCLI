@@ -1,4 +1,5 @@
 export interface departamentoI{
-    asignatura:string;
-    year:number;
+    idAsignatura:Int16Array;
+    nombreasignatura:string;
+    frecuenciaasignatura:Int16Array;
 }

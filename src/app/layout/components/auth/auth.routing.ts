@@ -9,6 +9,11 @@ import { NgModule } from '@angular/core';
         path: 'login',
         component: LoginComponent,
       },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      },
     ]),
   ],
   exports: [RouterModule]

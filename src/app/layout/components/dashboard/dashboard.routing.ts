@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'comprobardisponibilidad', component:ComprobardisponibilidadComponent},
   { path: 'login', component: LoginComponent },
   { path: 'ayuda', component: AyudaComponent },
-  { path: 'Creacion', component: CreaciondisponibilidadComponent}
+  { path: 'Creacion', component: CreaciondisponibilidadComponent},
+  { path: '**', redirectTo: 'disponibilidad'}
 ];
 
 export const DashboardRoutes = RouterModule.forChild(routes);

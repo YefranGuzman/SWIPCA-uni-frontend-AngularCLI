@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../../../../servicios/api-service.service';
 import { Router } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cargahoraria',
   templateUrl: './cargahoraria.component.html',
-  styleUrls: ['./cargahoraria.component.css']
+  styleUrls: ['./cargahoraria.component.css'],
+  standalone: true,
+  imports: [CommonModule, MatListModule],
 })
 
 export class CargahorariaComponent implements OnInit {

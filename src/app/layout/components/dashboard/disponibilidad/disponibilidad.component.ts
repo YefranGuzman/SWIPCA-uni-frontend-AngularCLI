@@ -1,44 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../../../../servicios/api-service.service';
 
 import { listaDisponibilidadPorUsuarioI } from '../../../../models/listDispUser.interface';
 import { disponibilidadAgendaI } from '../../../../models/agendaUser.interface';
-import { ApiServiceService } from '../../../../servicios/api-service.service';
-import { departamentoI } from '../../../../models/departamentoUser.interface';
 
-import {MatTabsModule} from '@angular/material/tabs';
+import { departamentoI } from '../../../../models/departamentoUser.interface';
+import { informacionUsuarioI } from '../../../../models/informacionUsuario.interface';
+
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-disponibilidad',
   templateUrl: './disponibilidad.component.html',
   styleUrls: ['./disponibilidad.component.css'],
   standalone: true,
-  imports: [MatTabsModule]
+  imports: [CommonModule, MatTabsModule, MatListModule]
 })
 export class DisponibilidadComponent implements OnInit {
-  nombrecompletoUser = 'Nombre del usuario';
-  tituloUser = 'Titulo del usuario';
-  departamentoUser = 'departamento del usuario';
 
-  constructor (private api:ApiServiceService){
-    this.notificaciones = [];
+  constructor(private api: ApiServiceService) {
+    this.notificacion = [];
     this.agenda = [];
     this.departamento = [];
+    this.infoUser = {} as informacionUsuarioI;
   }
 
-  notificaciones:listaDisponibilidadPorUsuarioI[];
+  notificacion: listaDisponibilidadPorUsuarioI[];
   agenda: disponibilidadAgendaI[];
   departamento: departamentoI[];
+  infoUser: informacionUsuarioI;
 
-  ngOnInit(): void {
+  ngOnInit() {
     const Usuario = localStorage.getItem('idUsuario');
 
     if (Usuario) {
       const idUsuario = parseInt(Usuario);
 
-      this.api.ListaClasesDocente(idUsuario).subscribe(data => this.notificaciones = data);
+      this.api.ListaClasesDocente(idUsuario).subscribe(data => console.log(data));
       this.api.listarAgendaDocente(idUsuario).subscribe(data => this.agenda = data);
       this.api.listardepartamento(idUsuario).subscribe(data => this.departamento = data);
+      this.api.informacionUsuario(idUsuario).subscribe(data => this.infoUser = data);
     }
   }
-
 }

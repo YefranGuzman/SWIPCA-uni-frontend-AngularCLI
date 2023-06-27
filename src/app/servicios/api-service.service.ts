@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { listaDisponibilidadPorUsuarioI } from '../models/listDispUser.interface';
 import { disponibilidadAgendaI } from '../models/agendaUser.interface';
 import { departamentoI } from '../models/departamentoUser.interface';
+import { informacionUsuarioI } from '../models/informacionUsuario.interface';
 
 
 @Injectable({
@@ -21,19 +22,25 @@ export class ApiServiceService {
     return this.http.post<responseI>(direccion,form);
   }
   
+  //Pantalla disponibilidad
   ListaClasesDocente(idUsuario:number):Observable<listaDisponibilidadPorUsuarioI[]>{
-    let direccion = this.url+"Clase/agenda?idUsuario="+idUsuario;
+    let direccion = this.url+"api/Clase/agenda?idUsuario="+idUsuario;
     return this.http.get<listaDisponibilidadPorUsuarioI[]>(direccion);
   }
 
   listarAgendaDocente(idUsuario:number):Observable<disponibilidadAgendaI[]>{
-    let direccion = this.url+"agendadocente?idUsuario="+idUsuario;
+    let direccion = this.url+"agenda_docente?idUsuario="+idUsuario;
     return this.http.get<disponibilidadAgendaI[]>(direccion);
   }
 
   listardepartamento(idUsuario:number):Observable<departamentoI[]>{
-    let direccion = this.url+"agendadocente?idUsuario="+idUsuario;
+    let direccion = this.url+"api/Asignaturas/listarAsignaturasDepartamento?Usuario="+idUsuario;
     return this.http.get<departamentoI[]>(direccion);
   }
   
+  informacionUsuario(idUsuario:number):Observable<informacionUsuarioI>{
+    let direccion = this.url+"api/Usuario/InformacionUsuario?idUsuario="+idUsuario;
+    return this.http.get<informacionUsuarioI>(direccion);
+  }
+
 }
