@@ -1,1 +1,53 @@
-<p>perfil works!</p>
+<div class="row justify-content-md-center">
+    <div class="col col-lg-5 text-center" id="usuario">
+        <div class="col">
+          <img src="../../../../../assets/user.png">
+          <br>
+          <a>Informacion del usuario</a>
+          <br>
+            <a>{{infoUser.nombrecompleto}}</a>
+            <br>
+            <a>{{infoUser.puesto}}</a>
+            <br>
+            <a>{{infoUser.cargo}}</a>
+        </div>
+        <div class="col" id="usuario-actualizado">
+          <!--Lista de titulos-->
+          Titulos/Presigios
+          <mat-list-item >
+            <mat-list role="">
+              
+            </mat-list>
+          </mat-list-item>
+        </div>
+    </div>
+    <div class="col col-lg-5 text-center" id="usuario-actualizado">
+        <h1>Cambiar contraseña</h1>
+        <p>
+            Es necesario establecer una contraseña segura. Especifique entre 8 y 256 caracteres, pero no incluya palabras ni nombres comunes y combine letras mayúsculas, minúsculas, números y símbolos.
+        </p>
+        <br>
+        <h1>Correo del usuario</h1>
+        <mat-form-field>
+            <mat-label>Contraseña Anterior</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Contraseña Nueva</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password2'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Confirmar contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password3'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>    
+</div>

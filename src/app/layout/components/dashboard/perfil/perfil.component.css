@@ -1,0 +1,36 @@
+.col{
+    background-color: white;
+    padding: 20px;
+}
+
+.col img{
+    width: 128px;
+    height: 128px;
+}
+
+#usuario{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+}
+
+#usuario-actualizado{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

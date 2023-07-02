@@ -1,0 +1,23 @@
+.container-fluid{
+    background: white;
+}
+
+.container{
+    text-align: center;
+    color: gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.horizontal-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+  
+.horizontal-list li {
+    color: blue;
+    text-align: center;
+    padding-top: 5px;
+}

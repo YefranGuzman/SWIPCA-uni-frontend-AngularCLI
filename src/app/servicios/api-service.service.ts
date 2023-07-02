@@ -3,10 +3,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {loginI} from '../models/login.interface'
 import {responseI} from '../models/response.interface'
 import { Observable } from 'rxjs';
+
 import { listaDisponibilidadPorUsuarioI } from '../models/listDispUser.interface';
 import { disponibilidadAgendaI } from '../models/agendaUser.interface';
 import { departamentoI } from '../models/departamentoUser.interface';
 import { informacionUsuarioI } from '../models/informacionUsuario.interface';
+
+import { getObtenerCargaAcademicaI, ObtenerCargaAcademicaI } from '../models/getObtenerCargaAcademica.interface';
 
 
 @Injectable({
@@ -43,4 +46,9 @@ export class ApiServiceService {
     return this.http.get<informacionUsuarioI>(direccion);
   }
 
+  //api/CargaAcademica
+  getObtenerCargaAcademica(form: getObtenerCargaAcademicaI): Observable<ObtenerCargaAcademicaI> {
+    let direccion = `${this.url}getObtenerCargaAcademica?IdUsuarioLogin=${form.IdUsuarioLogin}&idUsuarioObtener=${form.idUsuarioObtener}&nombreturno=${form.nombreturno}`;
+    return this.http.get<ObtenerCargaAcademicaI>(direccion);
+  }  
 }

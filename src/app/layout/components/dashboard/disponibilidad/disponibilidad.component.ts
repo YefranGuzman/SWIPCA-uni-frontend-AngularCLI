@@ -3,7 +3,6 @@ import { ApiServiceService } from '../../../../servicios/api-service.service';
 
 import { listaDisponibilidadPorUsuarioI } from '../../../../models/listDispUser.interface';
 import { disponibilidadAgendaI } from '../../../../models/agendaUser.interface';
-
 import { departamentoI } from '../../../../models/departamentoUser.interface';
 import { informacionUsuarioI } from '../../../../models/informacionUsuario.interface';
 
@@ -38,7 +37,7 @@ export class DisponibilidadComponent implements OnInit {
     if (Usuario) {
       const idUsuario = parseInt(Usuario);
 
-      this.api.ListaClasesDocente(idUsuario).subscribe(data => console.log(data));
+      this.api.ListaClasesDocente(idUsuario).subscribe(data => this.notificacion = data);
       this.api.listarAgendaDocente(idUsuario).subscribe(data => this.agenda = data);
       this.api.listardepartamento(idUsuario).subscribe(data => this.departamento = data);
       this.api.informacionUsuario(idUsuario).subscribe(data => this.infoUser = data);
