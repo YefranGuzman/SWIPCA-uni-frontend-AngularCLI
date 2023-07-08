@@ -1,1 +1,32 @@
-<p>cargahoraria-dpto works!</p>
+<div class="container-fluid">
+    <div class="container col-6 col-md-4">
+        <h1>Parte1</h1>
+        <mat-form-field>
+            <mat-label>Asignatura</mat-label>
+            <mat-select placeholder="Seleccione uno">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Docente</mat-label>
+            <mat-select placeholder="Seleccione uno">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Grupo</mat-label>
+            <mat-select placeholder="Seleccione uno">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="container col-4 col-md-7">
+        <h1>Parte2</h1>
+    </div>
+</div>

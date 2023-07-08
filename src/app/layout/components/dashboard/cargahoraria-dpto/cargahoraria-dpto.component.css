@@ -1,0 +1,9 @@
+.container-fluid {
+    display: flex;
+}
+
+.container{
+    background: #fff;
+    text-align: center;
+}
+

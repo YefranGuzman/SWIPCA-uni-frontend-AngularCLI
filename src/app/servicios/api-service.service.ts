@@ -8,6 +8,7 @@ import { listaDisponibilidadPorUsuarioI } from '../models/listDispUser.interface
 import { disponibilidadAgendaI } from '../models/agendaUser.interface';
 import { departamentoI } from '../models/departamentoUser.interface';
 import { informacionUsuarioI } from '../models/informacionUsuario.interface';
+import { AsignaturaResponseI } from '../models/getListaAsignaturas.interface';
 
 import { getObtenerCargaAcademicaI, ObtenerCargaAcademicaI } from '../models/getObtenerCargaAcademica.interface';
 
@@ -42,7 +43,7 @@ export class ApiServiceService {
   }
   
   informacionUsuario(idUsuario:number):Observable<informacionUsuarioI>{
-    let direccion = this.url+"api/Usuario/InformacionUsuario?idUsuario="+idUsuario;
+    let direccion = this.url+"api/Usuario/getInformacionUsuario?idUsuario="+idUsuario;
     return this.http.get<informacionUsuarioI>(direccion);
   }
 
@@ -51,4 +52,9 @@ export class ApiServiceService {
     let direccion = `${this.url}getObtenerCargaAcademica?IdUsuarioLogin=${form.IdUsuarioLogin}&idUsuarioObtener=${form.idUsuarioObtener}&nombreturno=${form.nombreturno}`;
     return this.http.get<ObtenerCargaAcademicaI>(direccion);
   }  
+  //api/Asignatura
+  getObtenerAsignatura():Observable<AsignaturaResponseI[]>{
+    let direccion = this.url+"api/Asignaturas/ListaAsignaturas";
+    return this.http.get<AsignaturaResponseI[]>(direccion);
+  }
 }
