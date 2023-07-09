@@ -1,16 +1,15 @@
 export interface getObtenerCargaAcademicaI{
-    IdUsuarioLogin : Int16Array;
-    idUsuarioObtener : Int16Array;
+    IdUsuarioLogin : number;
     nombreturno : string;
 }
 
 export interface ObtenerCargaAcademicaI{
-    idCarga : Int16Array,
+    idCarga : number,
     asignatura : string,
     aula : string,
     grupo : string,
     horario : string,
-    frecuencia : Int16Array,
+    frecuencia : number,
     observacion : string,
     observacionValidada: string
 }

@@ -19,18 +19,17 @@ import { CommonModule } from '@angular/common';
 })
 export class DisponibilidadComponent implements OnInit {
 
+  notificacion: listaDisponibilidadPorUsuarioI[];
+  agenda: disponibilidadAgendaI[];
+  departamento: departamentoI[];
+  infoUser: informacionUsuarioI;
+
   constructor(private api: ApiServiceService) {
     this.notificacion = [];
     this.agenda = [];
     this.departamento = [];
     this.infoUser = {} as informacionUsuarioI;
   }
-
-  notificacion: listaDisponibilidadPorUsuarioI[];
-  agenda: disponibilidadAgendaI[];
-  departamento: departamentoI[];
-  infoUser: informacionUsuarioI;
-
   ngOnInit() {
     const Usuario = localStorage.getItem('idUsuario');
 

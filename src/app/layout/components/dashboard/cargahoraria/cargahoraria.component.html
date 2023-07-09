@@ -1,7 +1,8 @@
 <div class="container-fluid">
     <div class="container">
         <h1>Carga Horaria</h1>
-        <div>
+        <!--
+          <div>
             <form class="example-form">
                 <mat-form-field class="example-full-width">
                   <mat-label>Clase</mat-label>
@@ -13,12 +14,12 @@
                   </mat-autocomplete>
                 </mat-form-field>
             </form>
-        </div>          
+        </div>   
+        -->       
     </div>
-    <mat-tab-group>
+    <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="onTabChange($event)">
         <mat-tab label="Matutino">
             <ul class="horizontal-list">
-                <li>Periodo</li>
                 <li>Asignatura</li>
                 <li>Aula</li>
                 <li>Grupo</li>
@@ -26,21 +27,50 @@
                 <li>Frecuencia</li>
                 <li>observacion<li>
             </ul>
-            <ul class="horizontal-list">
-                <li>Contenido Periodo</li>
-                <li>Contenido Asignatura</li>
-                <li>Contenido Aula</li>
-                <li>Contenido Grupo</li>
-                <li>Contenido Periodo</li>
-                <li>Contenido Frecuencia</li>
-                <li>Contenido observacion</li>
+            <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+                <li>{{prop.asignatura}}</li>
+                <li>{{prop.aula}}</li>
+                <li>{{prop.grupo}}</li>
+                <li>{{prop.horario}}</li>
+                <li>{{prop.frecuencia}}</li>
+                <li>{{prop.observacion}}</li>
             </ul>
         </mat-tab>
         <mat-tab label="Vespertino">
-
+          <ul class="horizontal-list">
+            <li>Asignatura</li>
+            <li>Aula</li>
+            <li>Grupo</li>
+            <li>Periodo</li>
+            <li>Frecuencia</li>
+            <li>observacion<li>
+         </ul>
+         <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+             <li>{{prop.asignatura}}</li>
+             <li>{{prop.aula}}</li>
+             <li>{{prop.grupo}}</li>
+             <li>{{prop.horario}}</li>
+             <li>{{prop.frecuencia}}</li>
+             <li>{{prop.observacion}}</li>
+         </ul>
         </mat-tab>
         <mat-tab label="Nocturno">
-
+          <ul class="horizontal-list">
+            <li>Asignatura</li>
+            <li>Aula</li>
+            <li>Grupo</li>
+            <li>Periodo</li>
+            <li>Frecuencia</li>
+            <li>observacion<li>
+         </ul>
+         <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+             <li>{{prop.asignatura}}</li>
+             <li>{{prop.aula}}</li>
+             <li>{{prop.grupo}}</li>
+             <li>{{prop.horario}}</li>
+             <li>{{prop.frecuencia}}</li>
+             <li>{{prop.observacion}}</li>
+         </ul>
         </mat-tab>
       </mat-tab-group>      
 </div>

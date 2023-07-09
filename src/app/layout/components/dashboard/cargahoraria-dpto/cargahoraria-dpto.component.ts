@@ -5,6 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 interface Food {
   value: string;
@@ -16,7 +17,7 @@ interface Food {
   templateUrl: './cargahoraria-dpto.component.html',
   styleUrls: ['./cargahoraria-dpto.component.css'],
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule]
+  imports: [MatFormFieldModule, MatSelectModule, NgFor, MatInputModule, FormsModule, MatButtonModule]
 })
 export class CargahorariaDPTOComponent {
   foods: Food[] = [

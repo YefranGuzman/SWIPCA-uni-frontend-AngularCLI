@@ -48,9 +48,9 @@ export class ApiServiceService {
   }
 
   //api/CargaAcademica
-  getObtenerCargaAcademica(form: getObtenerCargaAcademicaI): Observable<ObtenerCargaAcademicaI> {
-    let direccion = `${this.url}getObtenerCargaAcademica?IdUsuarioLogin=${form.IdUsuarioLogin}&idUsuarioObtener=${form.idUsuarioObtener}&nombreturno=${form.nombreturno}`;
-    return this.http.get<ObtenerCargaAcademicaI>(direccion);
+  getObtenerCargaAcademica(form: getObtenerCargaAcademicaI): Observable<ObtenerCargaAcademicaI[]> {
+    let direccion = `${this.url}ObtenerCargaAcademica?IdUsuarioLogin=${form.IdUsuarioLogin}&nombreturno=${form.nombreturno}`;
+    return this.http.get<ObtenerCargaAcademicaI[]>(direccion);
   }  
   //api/Asignatura
   getObtenerAsignatura():Observable<AsignaturaResponseI[]>{

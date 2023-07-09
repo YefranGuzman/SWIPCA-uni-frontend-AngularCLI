@@ -1,55 +1,60 @@
 <div class="row justify-content-md-center">
-    <div class="col col-lg-7">
-      <mat-tab-group>
-        <mat-tab label="Notificaciones">
-          <mat-list role="list">
-            <mat-list-item *ngFor="let notificaciones of notificacion">
-              <li>{{notificaciones.idClase}}</li>
-              <li>{{notificaciones.Dia}}</li>
-              <li>{{notificaciones.Asignatura}}</li>
-              <li>{{notificaciones.Grupo}}</li>
-              <li>{{notificaciones.Hora}}</li>
+  <div class="col col-lg-7">
+    <mat-tab-group>
+      <mat-tab label="Notificaciones">
+        <mat-list role="list">
+          <div class="notification-container">
+            <div *ngIf="notificacion.length === 0">
+              <h2>No hay notificaciones para mostrar</h2>
+            </div>
+            <mat-list-item class="vertical-container" *ngFor="let notificaciones of notificacion">
+              <span>{{notificaciones.idClase}}</span>
+              <span>{{notificaciones.dia}}</span>
+              <span>{{notificaciones.asignatura}}</span>
+              <span>{{notificaciones.grupo}}</span>
+              <span>{{notificaciones.hora}}</span>
             </mat-list-item>
-          </mat-list>          
-        </mat-tab>
-        <mat-tab label="Agenda">
-          <mat-list-item *ngFor="let agendas of agenda">
-            <span>{{agendas.fecha}}</span>
-            <span>{{agendas.observacion}}</span>
-          </mat-list-item>
-        </mat-tab>
-        <mat-tab label="Departamento">
-          <h2>Informacion de Departamento</h2>
-          <h3>Descripcion</h3>
-          <mat-list-item *ngFor="let departamentos of departamento">
-            <span>{{departamentos.idAsignatura}}</span>
-            <span>{{departamentos.nombreasignatura}}</span>
-            <span>{{departamentos.frecuenciaasignatura}}</span>
-          </mat-list-item>
-          <span>Organigrama del departamento de {{infoUser.cargo}}</span>
-        </mat-tab>
-      </mat-tab-group>           
-    </div>
-    <div class="col col-lg-4 text-center">
-      <div class="col">
-        <img src="../../../../../assets/user.png">
-        <br>
-        <a>Informacion del usuario</a>
-        <br>
-          <a>{{infoUser.nombrecompleto}}</a>
-          <br>
-          <a>{{infoUser.puesto}}</a>
-          <br>
-          <a>{{infoUser.cargo}}</a>
-      </div>
-      <div class="col">
-        <!--Lista de titulos-->
-        Titulos/Presigios
-        <mat-list-item >
-          <mat-list role="">
-            
-          </mat-list>
+          </div>
+        </mat-list>
+      </mat-tab>
+      <mat-tab label="Agenda">
+        <mat-list-item *ngFor="let agendas of agenda">
+          <span>{{agendas.fecha}}</span>
+          <span>{{agendas.observacion}}</span>
         </mat-list-item>
-      </div>
+      </mat-tab>
+      <mat-tab label="Departamento">
+        <h2>Informacion de Departamento</h2>
+        <h3>Descripcion</h3>
+        <mat-list-item *ngFor="let departamentos of departamento">
+          <span>{{departamentos.idAsignatura}}</span>
+          <span>{{departamentos.nombreasignatura}}</span>
+          <span>{{departamentos.frecuenciaasignatura}}</span>
+        </mat-list-item>
+        <span>Organigrama del departamento de {{infoUser.cargo}}</span>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="col col-lg-4 text-center">
+    <div class="col">
+      <img src="../../../../../assets/user.png">
+      <br>
+      <a>Informacion del usuario</a>
+      <br>
+      <a>{{infoUser.nombrecompleto}}</a>
+      <br>
+      <a>{{infoUser.puesto}}</a>
+      <br>
+      <a>{{infoUser.cargo}}</a>
     </div>
+    <div class="col">
+      <!--Lista de titulos-->
+      Titulos/Presigios
+      <mat-list-item>
+        <mat-list role="list">
+          <!-- Aquí van los elementos de la lista de títulos -->
+        </mat-list>
+      </mat-list-item>
+    </div>
+  </div>
 </div>

@@ -1,70 +1,52 @@
-.row{
-    background: #ddd;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.row {
+  background: #ddd;
+  padding: 20px;
+  margin: 10px;
 }
 
-img{
-    width: 128px;
-    height: 128px;
+img {
+  width: 128px;
+  height: 128px;
 }
 
-h1, h2, h3, h4{
-    font-size: 18px;
-    text-align: center;
+h1, h2, h3, h4 {
+  font-size: 18px;
+  text-align: center;
 }
 
-a{
-    font-size: 18px;
+a {
+  font-size: 18px;
 }
 
-.col{
-    background: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.col {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin: 10px;
 }
 
-.nav{
-    border-bottom: 2px solid rgb(0, 0, 0);
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
 }
 
-.nav-link{
-    background: black;
-    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 5%, rgba(8,24,131,1) 10%, rgba(7,37,139,1) 15%, rgba(7,50,147,1) 20%, rgba(7,37,139,1) 30%, rgba(75,155,209,1) 40%, rgba(125,233,255,1) 50%, rgba(255,255,255,1) 100%);*/
-    color: aliceblue;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-right: 10px;
+.notification-container mat-list-item {
+  display: flex;
 }
 
-.horizontal-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
   
-.horizontal-list li {
- padding-bottom: 5px;
- padding-top: 5px;
- padding-left: 5px;
- padding-right: 5px;
- width: 300px;
- height: 40px;   
+.vertical-container span {
+  margin-bottom: 10px;
 }
+  
+.vertical-container span:nth-child(4) {
+  align-self: flex-end;
+}  

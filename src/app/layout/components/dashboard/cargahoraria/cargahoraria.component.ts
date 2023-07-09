@@ -13,6 +13,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {NgFor, AsyncPipe} from '@angular/common';
 import { Observable } from 'rxjs';
 
+import { getObtenerCargaAcademicaI,ObtenerCargaAcademicaI } from '../../../../models/getObtenerCargaAcademica.interface';
+
 @Component({
   selector: 'app-cargahoraria',
   templateUrl: './cargahoraria.component.html',
@@ -28,6 +30,9 @@ import { Observable } from 'rxjs';
 })
 
 export class CargahorariaComponent implements OnInit {
+  selectedIndex: number;
+  responseObtenerCargaAcademica: getObtenerCargaAcademicaI;
+  resultObtenerCargaAcademica: ObtenerCargaAcademicaI[]
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
@@ -37,13 +42,68 @@ export class CargahorariaComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value || '')),
     );
+    this.selectedIndex = 0;
+    this.responseObtenerCargaAcademica = {} as getObtenerCargaAcademicaI;
+    this.resultObtenerCargaAcademica = [];
   }
   ngOnInit(): void {
-
+    const Usuario = localStorage.getItem('idUsuario');
+    this.selectedIndex = 0; // Índice inicial que deseas mostrar
+  
+    if (Usuario) {
+      const idUsuario = parseInt(Usuario);
+      const turno = 'M'; // Turno correspondiente al índice inicial
+  
+      this.responseObtenerCargaAcademica = {
+        IdUsuarioLogin: idUsuario,
+        nombreturno: turno
+      };
+  
+      this.api.getObtenerCargaAcademica(this.responseObtenerCargaAcademica).subscribe(data => {
+        this.resultObtenerCargaAcademica = data;
+      });
+    }
   }
+    
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  onTabChange(event: any){
+    const Usuario = localStorage.getItem('idUsuario');
+    this.selectedIndex = event.index;
+    if(this.selectedIndex === 0 && Usuario){
+      const idUsuario = parseInt(Usuario);
+      const turno = 'M';
+
+      this.responseObtenerCargaAcademica = { IdUsuarioLogin : idUsuario, nombreturno: turno
+      }
+
+      this.api.getObtenerCargaAcademica(this.responseObtenerCargaAcademica).subscribe(data => {
+        this.resultObtenerCargaAcademica = data
+      })
+    }
+    if(this.selectedIndex === 1 && Usuario){
+      const idUsuario = parseInt(Usuario);
+      const turno = 'T';
+      
+      this.responseObtenerCargaAcademica = {IdUsuarioLogin : idUsuario, nombreturno: turno
+      }
+
+      this.api.getObtenerCargaAcademica(this.responseObtenerCargaAcademica).subscribe(data => {
+        this.resultObtenerCargaAcademica = data
+      })
+    }if(this.selectedIndex === 2 && Usuario){
+      const idUsuario = parseInt(Usuario);
+      const turno = 'N';
+
+      this.responseObtenerCargaAcademica = { IdUsuarioLogin : idUsuario, nombreturno: turno}
+      
+      this.api.getObtenerCargaAcademica(this.responseObtenerCargaAcademica).subscribe(data => {
+        this.resultObtenerCargaAcademica = data
+      })
+    }
   }
 }
