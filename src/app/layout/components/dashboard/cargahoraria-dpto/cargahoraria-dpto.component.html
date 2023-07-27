@@ -38,5 +38,61 @@
     </div>
     <div class="container col-4 col-lg-8">
         <h1>Cargas Academicas</h1>
+        <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="onTabChange($event)">
+          <mat-tab label="Matutino">
+              <ul class="horizontal-list">
+                  <li>Asignatura</li>
+                  <li>Aula</li>
+                  <li>Grupo</li>
+                  <li>Periodo</li>
+                  <li>Frecuencia</li>
+                  <li>observacion<li>
+              </ul>
+              <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+                  <li>{{prop.asignatura}}</li>
+                  <li>{{prop.aula}}</li>
+                  <li>{{prop.grupo}}</li>
+                  <li>{{prop.horario}}</li>
+                  <li>{{prop.frecuencia}}</li>
+                  <li>{{prop.observacion}}</li>
+              </ul>
+          </mat-tab>
+          <mat-tab label="Vespertino">
+            <ul class="horizontal-list">
+              <li>Asignatura</li>
+              <li>Aula</li>
+              <li>Grupo</li>
+              <li>Periodo</li>
+              <li>Frecuencia</li>
+              <li>observacion<li>
+           </ul>
+           <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+               <li>{{prop.asignatura}}</li>
+               <li>{{prop.aula}}</li>
+               <li>{{prop.grupo}}</li>
+               <li>{{prop.horario}}</li>
+               <li>{{prop.frecuencia}}</li>
+               <li>{{prop.observacion}}</li>
+           </ul>
+          </mat-tab>
+          <mat-tab label="Nocturno">
+            <ul class="horizontal-list">
+              <li>Asignatura</li>
+              <li>Aula</li>
+              <li>Grupo</li>
+              <li>Periodo</li>
+              <li>Frecuencia</li>
+              <li>observacion<li>
+           </ul>
+           <ul class="horizontal-list" *ngFor="let prop of resultObtenerCargaAcademica"> 
+               <li>{{prop.asignatura}}</li>
+               <li>{{prop.aula}}</li>
+               <li>{{prop.grupo}}</li>
+               <li>{{prop.horario}}</li>
+               <li>{{prop.frecuencia}}</li>
+               <li>{{prop.observacion}}</li>
+           </ul>
+          </mat-tab>
+      </mat-tab-group>
     </div>
 </div>

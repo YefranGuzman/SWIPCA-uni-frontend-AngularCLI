@@ -6,7 +6,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
-import {map, startWith} from 'rxjs/operators';
+import { map, startWith} from 'rxjs/operators';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -40,7 +40,7 @@ export class CargahorariaComponent implements OnInit {
   constructor(private api:ApiServiceService, private router:Router){
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value || '')),
+      map(value => this._filter(value || ''))
     );
     this.selectedIndex = 0;
     this.responseObtenerCargaAcademica = {} as getObtenerCargaAcademicaI;
