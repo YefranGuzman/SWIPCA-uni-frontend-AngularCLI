@@ -11,6 +11,8 @@ import { informacionUsuarioI } from '../models/informacionUsuario.interface';
 import { AsignaturaResponseI } from '../models/getListaAsignaturas.interface';
 
 import { getObtenerCargaAcademicaI, ObtenerCargaAcademicaI } from '../models/getObtenerCargaAcademica.interface';
+import { ObtenerDocenteI } from '../models/getObtenerDocente.interface';
+import { GrupoI } from '../models/getGrupo.interface';
 
 
 @Injectable({
@@ -53,8 +55,18 @@ export class ApiServiceService {
     return this.http.get<ObtenerCargaAcademicaI[]>(direccion);
   }  
   //api/Asignatura
-  getObtenerAsignatura():Observable<AsignaturaResponseI[]>{
-    let direccion = this.url+"api/Asignaturas/ListaAsignaturas";
+  getObtenerAsignatura(idUsuario:number):Observable<AsignaturaResponseI[]>{
+    let direccion = this.url+"api/Asignaturas/ListaAsignaturas?idUsuario=" + idUsuario;
     return this.http.get<AsignaturaResponseI[]>(direccion);
+  }
+  //api/Docentes
+  getObtenerDocente(idUsuario:number):Observable<ObtenerDocenteI[]>{
+    let direccion = this.url+"api/Docentes/ObtenerDocente?idUsuario=" + idUsuario;
+    return this.http.get<ObtenerDocenteI[]>(direccion);
+  }
+  //api/Grupo
+  getObtenerGrupo():Observable<GrupoI[]>{
+    let direccion = this.url+"api/Grupo";
+    return this.http.get<GrupoI[]>(direccion);
   }
 }

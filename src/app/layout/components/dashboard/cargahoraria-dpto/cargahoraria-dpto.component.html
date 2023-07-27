@@ -1,37 +1,42 @@
 <div class="container-fluid">
-    <div class="container col-6 col-md-4">
-        <h1>Parte1</h1>
+    <div class="container col-4 col-md-3">
+        <h1>Contenido</h1>
         <div class="row">
           <section>
-            <button mat-raised-button color="Primary">Apartado de Clases</button>
+            <button mat-raised-button color="Primary">Asignaci&oacute;n de Clases</button>
           </section>
         </div>
         <mat-form-field>
             <mat-label>Asignatura</mat-label>
             <mat-select placeholder="Seleccione uno">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+              <mat-option *ngFor="let asig of asignaturasdpto" [value]="asig.nombre">
+                {{asig.nombre}}
               </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Docente</mat-label>
             <mat-select placeholder="Seleccione uno">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+              <mat-option *ngFor="let doc of docentes" [value]="doc.nombreDocente">
+                {{doc.nombreDocente}}
               </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Grupo</mat-label>
             <mat-select placeholder="Seleccione uno">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+              <mat-option *ngFor="let gp of grupos" [value]="gp.nombre">
+                {{gp.nombre}}
               </mat-option>
             </mat-select>
         </mat-form-field>
+        <div class="row">
+          <section>
+            <button mat-raised-button color="Primary">Buscar Cargas</button>
+          </section>
+        </div>
     </div>
-    <div class="container col-4 col-md-7">
-        <h1>Parte2</h1>
+    <div class="container col-4 col-lg-8">
+        <h1>Cargas Academicas</h1>
     </div>
 </div>

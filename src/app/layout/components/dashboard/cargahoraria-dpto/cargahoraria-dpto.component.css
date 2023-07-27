@@ -1,9 +1,24 @@
 .container-fluid {
     display: flex;
+    margin: 0;
 }
 
 .container{
     background: #fff;
     text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
+.container h1{
+    color: rgb(0,55,130);;
+}
+
+.row button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(0,55,130);
+}

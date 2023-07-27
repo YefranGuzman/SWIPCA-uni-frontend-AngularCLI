@@ -18,6 +18,9 @@
         </mat-list>
       </mat-tab>
       <mat-tab label="Agenda">
+        <div *ngIf="agenda.length === 0">
+          <h2>No hay notificaciones para mostrar</h2>
+        </div>
         <mat-list-item *ngFor="let agendas of agenda">
           <span>{{agendas.fecha}}</span>
           <span>{{agendas.observacion}}</span>
@@ -26,6 +29,9 @@
       <mat-tab label="Departamento">
         <h2>Informacion de Departamento</h2>
         <h3>Descripcion</h3>
+        <div *ngIf="departamento.length === 0">
+          <h2>No hay notificaciones para mostrar</h2>
+        </div>
         <mat-list-item *ngFor="let departamentos of departamento">
           <span>{{departamentos.idAsignatura}}</span>
           <span>{{departamentos.nombreasignatura}}</span>
